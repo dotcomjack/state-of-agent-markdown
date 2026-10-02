@@ -1,0 +1,782 @@
+{
+ "title": "State of agent markdown, September 2026",
+ "url": "https://markdownregistry.com/reports/state-of-agent-markdown-2026-09",
+ "definitions": {
+  "observed": "files first indexed at least 14 days before the data was frozen",
+  "within7": "of those, files with an upstream commit dated within 7 days after first indexing (a lower bound)",
+  "within14": "the same within 14 days (a lower bound); the page's change figure",
+  "rest_files": "observed files outside the 10 repositories of that kind with the most changes within 14 days",
+  "rest_w14": "within14 for those files",
+  "cross_repo_dup": "files of at least 200 bytes whose bytes equal a file in another repository; the page's copy figure",
+  "copy_repos": "repositories holding at least one such copy",
+  "top4_copies": "copies held by the four repositories holding the most",
+  "distinct_contents": "NOT used on the page: distinct SHA-256 contents among the live files of that kind",
+  "drift_repos": "NOT used on the page: repositories with at least one observed file of that kind",
+  "changed": "NOT used on the page: files with any commit after first indexing, over each file's whole, unequal watch period",
+  "changed3": "NOT used on the page: files with three or more such commits, same unequal period",
+  "dup_files": "NOT the page's copy definition: files with any byte-identical twin, same repository and any size included",
+  "vendored.current": "files in other repositories byte-identical to the current recorded upstream version",
+  "vendored.older": "files in other repositories byte-identical to an older recorded upstream version",
+  "vendored.other": "files sharing the skill's name that match no recorded upstream version; left out of the page's figures"
+ },
+ "cite": "markdownregistry, \"State of agent markdown, September 2026\", September 27, 2026, https://markdownregistry.com/reports/state-of-agent-markdown-2026-09",
+ "findings": [
+  {
+   "id": "drift",
+   "text": "In the registry's corpus, roughly one in five agent markdown files changed within two weeks of being indexed. Of 47,724 files watched for at least 14 days, at least 9,487 (19.9%) received a new upstream commit within 14 days and at least 6,745 (14.1%) within 7. Without the ten most active repositories of each kind, the 14 day share is at least 17.8%."
+  },
+  {
+   "id": "drift-kind",
+   "text": "In the corpus, llms.txt files changed most often: at least 41.2% (106 of 257) changed within 14 days, followed by AGENTS.md at 27.8%, CLAUDE.md at 23.2%, SKILL.md at 19.4%, Cursor rules at 12.2%, DESIGN.md at 5.4%, each a lower bound."
+  },
+  {
+   "id": "vendored",
+   "text": "In the registry, copies of Anthropic's skills can fall behind their source. For 5 skills from the anthropics/skills repository (skill-creator, frontend-design, docx, pptx and xlsx), chosen because they change often, 75 files in other repositories are byte-for-byte copies of a recorded upstream version, and 47 of them (62.7%) match an older version rather than the current one."
+  },
+  {
+   "id": "spec",
+   "text": "About one in ten SKILL.md files in the registry breaks the Agent Skills specification's frontmatter rules. Of 60,844 SKILL.md files inside a skill directory, 54,836 (90.1%) conform; the most common failure is a name that does not match its directory (3,858 files, 6.3%)."
+  },
+  {
+   "id": "critical",
+   "text": "The audit flags 194 of 69,119 files (0.3%) on at least one critical check. The checks are deliberately broad, so emoji joiners, stray zero-width spaces, Persian text, the example access key from Amazon's documentation, code that reads environment variables, security guidance that quotes an attack and security test fixtures trip them too; a flag means read this file, not that it is malicious."
+  },
+  {
+   "id": "pipe",
+   "text": "In the registry, 458 files contain a curl or wget command piped straight into a shell, 395 of them SKILL.md files."
+  },
+  {
+   "id": "copies",
+   "text": "In the registry, 5.7% of SKILL.md files (3,487 of 61,170, across 254 repositories) are byte-identical to a file in another repository. DESIGN.md reads 53.3%, but 540 of its 555 copies sit in four repositories that carry the same template set."
+  }
+ ],
+ "data": {
+  "slug": "2026-09",
+  "frozen_at": "2026-09-27T17:07:00Z",
+  "corpus": {
+   "artifacts": 69119,
+   "repos": 2887,
+   "owners": 2607,
+   "versions": 214457,
+   "first_crawl": "2026-09-05T21:32:54.928Z"
+  },
+  "window_days": {
+   "min_days": 14,
+   "max_days": 21.8
+  },
+  "removed_in_cohort": 1696,
+  "kinds": [
+   {
+    "kind": "skill",
+    "n": 61170,
+    "a": 57008,
+    "b": 2946,
+    "c": 1042,
+    "f": 174,
+    "observed": 42581,
+    "changed": 9350,
+    "within7": 5864,
+    "within14": 8272,
+    "changed3": 2609,
+    "dup_files": 9074,
+    "cross_repo_dup": 3487,
+    "copy_repos": 254,
+    "top4_copies": 602,
+    "drift_repos": 1633,
+    "rest_files": 40986,
+    "rest_w14": 7176,
+    "distinct_contents": 55931
+   },
+   {
+    "kind": "agents",
+    "n": 3901,
+    "a": 3570,
+    "b": 316,
+    "c": 6,
+    "f": 9,
+    "observed": 2623,
+    "changed": 836,
+    "within7": 512,
+    "within14": 730,
+    "changed3": 365,
+    "dup_files": 628,
+    "cross_repo_dup": 403,
+    "copy_repos": 85,
+    "top4_copies": 188,
+    "drift_repos": 856,
+    "rest_files": 1920,
+    "rest_w14": 477,
+    "distinct_contents": 3518
+   },
+   {
+    "kind": "claude",
+    "n": 2081,
+    "a": 1387,
+    "b": 682,
+    "c": 6,
+    "f": 6,
+    "observed": 1333,
+    "changed": 354,
+    "within7": 240,
+    "within14": 309,
+    "changed3": 167,
+    "dup_files": 590,
+    "cross_repo_dup": 40,
+    "copy_repos": 24,
+    "top4_copies": 20,
+    "drift_repos": 749,
+    "rest_files": 1236,
+    "rest_w14": 259,
+    "distinct_contents": 1596
+   },
+   {
+    "kind": "design",
+    "n": 1042,
+    "a": 1025,
+    "b": 15,
+    "c": 1,
+    "f": 1,
+    "observed": 634,
+    "changed": 36,
+    "within7": 27,
+    "within14": 34,
+    "changed3": 16,
+    "dup_files": 571,
+    "cross_repo_dup": 555,
+    "copy_repos": 17,
+    "top4_copies": 540,
+    "drift_repos": 122,
+    "rest_files": 518,
+    "rest_w14": 20,
+    "distinct_contents": 632
+   },
+   {
+    "kind": "rules",
+    "n": 510,
+    "a": 460,
+    "b": 48,
+    "c": 0,
+    "f": 2,
+    "observed": 296,
+    "changed": 44,
+    "within7": 22,
+    "within14": 36,
+    "changed3": 5,
+    "dup_files": 22,
+    "cross_repo_dup": 14,
+    "copy_repos": 4,
+    "top4_copies": 14,
+    "drift_repos": 76,
+    "rest_files": 204,
+    "rest_w14": 5,
+    "distinct_contents": 500
+   },
+   {
+    "kind": "llmstxt",
+    "n": 415,
+    "a": 351,
+    "b": 54,
+    "c": 8,
+    "f": 2,
+    "observed": 257,
+    "changed": 112,
+    "within7": 80,
+    "within14": 106,
+    "changed3": 71,
+    "dup_files": 46,
+    "cross_repo_dup": 16,
+    "copy_repos": 10,
+    "top4_copies": 10,
+    "drift_repos": 190,
+    "rest_files": 235,
+    "rest_w14": 85,
+    "distinct_contents": 392
+   }
+  ],
+  "spec": {
+   "n": 60844,
+   "no_name": 1244,
+   "no_description": 979,
+   "bad_name": 1327,
+   "name_not_dir": 3858,
+   "long_description": 601,
+   "conforming": 54836
+  },
+  "checks": [
+   {
+    "kind": "agents",
+    "check_id": "base64",
+    "failing": 1
+   },
+   {
+    "kind": "agents",
+    "check_id": "credential_exfil",
+    "failing": 0
+   },
+   {
+    "kind": "agents",
+    "check_id": "credential_read",
+    "failing": 22
+   },
+   {
+    "kind": "agents",
+    "check_id": "exfil_hosts",
+    "failing": 0
+   },
+   {
+    "kind": "agents",
+    "check_id": "hidden_comment",
+    "failing": 0
+   },
+   {
+    "kind": "agents",
+    "check_id": "hidden_style",
+    "failing": 2
+   },
+   {
+    "kind": "agents",
+    "check_id": "injection",
+    "failing": 6
+   },
+   {
+    "kind": "agents",
+    "check_id": "pipe_to_shell",
+    "failing": 22
+   },
+   {
+    "kind": "agents",
+    "check_id": "raw_ip",
+    "failing": 36
+   },
+   {
+    "kind": "agents",
+    "check_id": "rm_rf",
+    "failing": 3
+   },
+   {
+    "kind": "agents",
+    "check_id": "script_tag",
+    "failing": 58
+   },
+   {
+    "kind": "agents",
+    "check_id": "secret_shapes",
+    "failing": 0
+   },
+   {
+    "kind": "agents",
+    "check_id": "size",
+    "failing": 186
+   },
+   {
+    "kind": "agents",
+    "check_id": "zero_width",
+    "failing": 7
+   },
+   {
+    "kind": "claude",
+    "check_id": "base64",
+    "failing": 0
+   },
+   {
+    "kind": "claude",
+    "check_id": "credential_exfil",
+    "failing": 1
+   },
+   {
+    "kind": "claude",
+    "check_id": "credential_read",
+    "failing": 12
+   },
+   {
+    "kind": "claude",
+    "check_id": "exfil_hosts",
+    "failing": 0
+   },
+   {
+    "kind": "claude",
+    "check_id": "hidden_comment",
+    "failing": 1
+   },
+   {
+    "kind": "claude",
+    "check_id": "hidden_style",
+    "failing": 0
+   },
+   {
+    "kind": "claude",
+    "check_id": "injection",
+    "failing": 4
+   },
+   {
+    "kind": "claude",
+    "check_id": "pipe_to_shell",
+    "failing": 14
+   },
+   {
+    "kind": "claude",
+    "check_id": "raw_ip",
+    "failing": 22
+   },
+   {
+    "kind": "claude",
+    "check_id": "rm_rf",
+    "failing": 3
+   },
+   {
+    "kind": "claude",
+    "check_id": "script_tag",
+    "failing": 36
+   },
+   {
+    "kind": "claude",
+    "check_id": "secret_shapes",
+    "failing": 0
+   },
+   {
+    "kind": "claude",
+    "check_id": "size",
+    "failing": 604
+   },
+   {
+    "kind": "claude",
+    "check_id": "zero_width",
+    "failing": 4
+   },
+   {
+    "kind": "design",
+    "check_id": "base64",
+    "failing": 0
+   },
+   {
+    "kind": "design",
+    "check_id": "credential_exfil",
+    "failing": 0
+   },
+   {
+    "kind": "design",
+    "check_id": "credential_read",
+    "failing": 2
+   },
+   {
+    "kind": "design",
+    "check_id": "exfil_hosts",
+    "failing": 0
+   },
+   {
+    "kind": "design",
+    "check_id": "hidden_comment",
+    "failing": 0
+   },
+   {
+    "kind": "design",
+    "check_id": "hidden_style",
+    "failing": 0
+   },
+   {
+    "kind": "design",
+    "check_id": "injection",
+    "failing": 0
+   },
+   {
+    "kind": "design",
+    "check_id": "pipe_to_shell",
+    "failing": 5
+   },
+   {
+    "kind": "design",
+    "check_id": "raw_ip",
+    "failing": 4
+   },
+   {
+    "kind": "design",
+    "check_id": "rm_rf",
+    "failing": 1
+   },
+   {
+    "kind": "design",
+    "check_id": "script_tag",
+    "failing": 0
+   },
+   {
+    "kind": "design",
+    "check_id": "secret_shapes",
+    "failing": 0
+   },
+   {
+    "kind": "design",
+    "check_id": "size",
+    "failing": 6
+   },
+   {
+    "kind": "design",
+    "check_id": "zero_width",
+    "failing": 1
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "base64",
+    "failing": 0
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "credential_exfil",
+    "failing": 0
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "credential_read",
+    "failing": 3
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "exfil_hosts",
+    "failing": 1
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "hidden_comment",
+    "failing": 0
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "hidden_style",
+    "failing": 1
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "injection",
+    "failing": 1
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "pipe_to_shell",
+    "failing": 22
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "raw_ip",
+    "failing": 18
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "rm_rf",
+    "failing": 1
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "script_tag",
+    "failing": 8
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "secret_shapes",
+    "failing": 0
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "size",
+    "failing": 25
+   },
+   {
+    "kind": "llmstxt",
+    "check_id": "zero_width",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "base64",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "credential_exfil",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "credential_read",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "exfil_hosts",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "hidden_comment",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "hidden_style",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "injection",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "pipe_to_shell",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "raw_ip",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "rm_rf",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "script_tag",
+    "failing": 3
+   },
+   {
+    "kind": "rules",
+    "check_id": "secret_shapes",
+    "failing": 0
+   },
+   {
+    "kind": "rules",
+    "check_id": "size",
+    "failing": 45
+   },
+   {
+    "kind": "rules",
+    "check_id": "zero_width",
+    "failing": 2
+   },
+   {
+    "kind": "skill",
+    "check_id": "base64",
+    "failing": 34
+   },
+   {
+    "kind": "skill",
+    "check_id": "credential_exfil",
+    "failing": 30
+   },
+   {
+    "kind": "skill",
+    "check_id": "credential_read",
+    "failing": 293
+   },
+   {
+    "kind": "skill",
+    "check_id": "description",
+    "failing": 1093
+   },
+   {
+    "kind": "skill",
+    "check_id": "exfil_hosts",
+    "failing": 21
+   },
+   {
+    "kind": "skill",
+    "check_id": "frontmatter",
+    "failing": 794
+   },
+   {
+    "kind": "skill",
+    "check_id": "hidden_comment",
+    "failing": 7
+   },
+   {
+    "kind": "skill",
+    "check_id": "hidden_style",
+    "failing": 27
+   },
+   {
+    "kind": "skill",
+    "check_id": "injection",
+    "failing": 236
+   },
+   {
+    "kind": "skill",
+    "check_id": "name",
+    "failing": 1263
+   },
+   {
+    "kind": "skill",
+    "check_id": "pipe_to_shell",
+    "failing": 395
+   },
+   {
+    "kind": "skill",
+    "check_id": "raw_ip",
+    "failing": 611
+   },
+   {
+    "kind": "skill",
+    "check_id": "rm_rf",
+    "failing": 54
+   },
+   {
+    "kind": "skill",
+    "check_id": "script_tag",
+    "failing": 718
+   },
+   {
+    "kind": "skill",
+    "check_id": "secret_shapes",
+    "failing": 18
+   },
+   {
+    "kind": "skill",
+    "check_id": "size",
+    "failing": 797
+   },
+   {
+    "kind": "skill",
+    "check_id": "zero_width",
+    "failing": 77
+   }
+  ],
+  "audit_versions": [
+   {
+    "v": 3,
+    "n": 43512
+   },
+   {
+    "v": 4,
+    "n": 25607
+   }
+  ],
+  "vendored": [
+   {
+    "name": "skill-creator",
+    "up_id": "art_hl7wjhua3foziup4",
+    "up_versions": 4,
+    "copies": 101,
+    "current": 14,
+    "older": 8,
+    "other": 79
+   },
+   {
+    "name": "frontend-design",
+    "up_id": "art_gvi6xzc6elndc3u6",
+    "up_versions": 4,
+    "copies": 72,
+    "current": 3,
+    "older": 12,
+    "other": 57
+   },
+   {
+    "name": "docx",
+    "up_id": "art_qhvq2lp3auskkm76",
+    "up_versions": 4,
+    "copies": 33,
+    "current": 3,
+    "older": 10,
+    "other": 20
+   },
+   {
+    "name": "pptx",
+    "up_id": "art_ravt22x6wnra75eg",
+    "up_versions": 3,
+    "copies": 31,
+    "current": 3,
+    "older": 8,
+    "other": 20
+   },
+   {
+    "name": "xlsx",
+    "up_id": "art_pze7rppj2yulxgcf",
+    "up_versions": 3,
+    "copies": 29,
+    "current": 5,
+    "older": 9,
+    "other": 15
+   }
+  ],
+  "most_copied": [
+   {
+    "name": "AGENTS.md@apps/web",
+    "kind": "agents",
+    "repos": 15,
+    "copies": 18,
+    "first_id": "art_koy4dtwnpppvrxze",
+    "size": 678
+   },
+   {
+    "name": "skill-creator",
+    "kind": "skill",
+    "repos": 15,
+    "copies": 15,
+    "first_id": "art_hl7wjhua3foziup4",
+    "size": 33168
+   },
+   {
+    "name": "doc-coauthoring",
+    "kind": "skill",
+    "repos": 12,
+    "copies": 12,
+    "first_id": "art_ktioqgl7lkbjwml6",
+    "size": 15815
+   },
+   {
+    "name": "AGENTS.md@benchmarks/runs/superpowers",
+    "kind": "agents",
+    "repos": 10,
+    "copies": 13,
+    "first_id": "art_ebsvm5xsblpffdv6",
+    "size": 327
+   },
+   {
+    "name": "internal-comms",
+    "kind": "skill",
+    "repos": 10,
+    "copies": 10,
+    "first_id": "art_4qfdtiofuohngwta",
+    "size": 1511
+   },
+   {
+    "name": "theme-factory",
+    "kind": "skill",
+    "repos": 10,
+    "copies": 10,
+    "first_id": "art_igshavlzca2r3thz",
+    "size": 3124
+   },
+   {
+    "name": "codebase-design",
+    "kind": "skill",
+    "repos": 9,
+    "copies": 10,
+    "first_id": "art_wb5dphfswr2hjeq4",
+    "size": 6446
+   },
+   {
+    "name": "brand-guidelines",
+    "kind": "skill",
+    "repos": 9,
+    "copies": 9,
+    "first_id": "art_7i7vbtfp5hcho2rf",
+    "size": 2235
+   },
+   {
+    "name": "pdf",
+    "kind": "skill",
+    "repos": 9,
+    "copies": 9,
+    "first_id": "art_ce4b5ce6jbirfqqt",
+    "size": 8072
+   },
+   {
+    "name": "algorithmic-art",
+    "kind": "skill",
+    "repos": 9,
+    "copies": 9,
+    "first_id": "art_jzfkreew2atmppwl",
+    "size": 19769
+   }
+  ]
+ }
+}

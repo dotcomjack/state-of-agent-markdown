@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "State of agent markdown, September 2026"
+authors:
+  - name: "markdownregistry.com"
+    website: "https://markdownregistry.com"
+date-released: 2026-09-27
+url: "https://markdownregistry.com/reports/state-of-agent-markdown-2026-09"
+repository-code: "https://github.com/dotcomjack/state-of-agent-markdown"
+license: CC-BY-4.0
+keywords:
+  - agent-skills
+  - skill-md
+  - agents-md
+  - claude-md
+  - llms-txt
+  - dataset
