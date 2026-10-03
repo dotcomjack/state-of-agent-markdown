@@ -54,6 +54,10 @@ Kind keys in `data.kinds`: `skill` is SKILL.md, `agents` is AGENTS.md, `claude` 
 
 The full method (how repositories are found, what counts as a change, the 14 day window, what counts as a copy, audit versions) is on the [report page](https://markdownregistry.com/reports/state-of-agent-markdown-2026-09), under Method.
 
+## Guides that use these figures
+
+[markdownregistry.com/guides](https://markdownregistry.com/guides): how to pin an agent skill, AGENTS.md vs CLAUDE.md vs SKILL.md, skill security, where to find skills, the SKILL.md frontmatter rules, and agent skills for a team.
+
 ## Cite
 
 markdownregistry, "State of agent markdown, September 2026", September 27, 2026, https://markdownregistry.com/reports/state-of-agent-markdown-2026-09
