@@ -58,6 +58,26 @@ The full method (how repositories are found, what counts as a change, the 14 day
 
 [markdownregistry.com/guides](https://markdownregistry.com/guides): how to pin an agent skill, AGENTS.md vs CLAUDE.md vs SKILL.md, skill security, where to find skills, the SKILL.md frontmatter rules, and agent skills for a team.
 
+## Studies, October 2026
+
+Four shorter studies counted from the same crawl, each with its method on its page. The files in `data/studies/` are byte-for-byte copies of the JSON each post publishes beside it (the post's address with `.json` added).
+
+| Study | Data |
+|---|---|
+| [AGENTS.md and CLAUDE.md in one repo: what 1,203 folders do](https://markdownregistry.com/blog/agents-md-and-claude-md-in-one-repo) | `data/studies/agents-md-and-claude-md-in-one-repo.json` |
+| [How projects write Cursor rules: 557 files counted](https://markdownregistry.com/blog/how-projects-write-cursor-rules) | `data/studies/how-projects-write-cursor-rules.json` |
+| [How llms.txt files follow the format: 438 files counted](https://markdownregistry.com/blog/how-llms-txt-files-follow-the-format) | `data/studies/how-llms-txt-files-follow-the-format.json` |
+| [DESIGN.md files against the official linter: 1,162 checked](https://markdownregistry.com/blog/design-md-files-against-the-official-linter) | `data/studies/design-md-files-against-the-official-linter.json` |
+
+In each post's own words (its opening paragraph):
+
+- **AGENTS.md and CLAUDE.md in one repo: what 1,203 folders do.** Keep the instructions in AGENTS.md and start CLAUDE.md with an @AGENTS.md line. That is what Claude Code's docs show, and the most common single setup in the 1,203 folders the registry has collected from public GitHub that hold both files: 28.8% use the import, 23.8% a symlink and 3.2% identical copies. Another 8.8% only mention the other file in words, and 35.4% keep two separate files.
+- **How projects write Cursor rules: 557 files counted.** Most projects now write Cursor rules as .mdc files in .cursor/rules: 510 of the 557 rule files the registry has collected, against 47 legacy .cursorrules files. Of the .mdc rules, 32.7% load in every chat, 32.2% attach to matching files and 28.8% let the agent decide. And 46 set a narrow file pattern that Cursor ignores, because they also say alwaysApply: true.
+- **How llms.txt files follow the format: 438 files counted.** Most llms.txt files get the top of the format right and drift below it. Of 438 files named llms.txt in public GitHub repositories, 96.6% open with an H1 and 85.2% follow it with a summary blockquote. But only 30.6% follow the whole structure the llms.txt proposal sets out: in 52.7% of files, at least one section under an H2 heading holds prose, not the list of links the proposal describes.
+- **DESIGN.md files against the official linter: 1,162 checked.** Most DESIGN.md files keep their design values in the markdown body, not in tokens a tool can check. Of 1,162 DESIGN.md files in public GitHub repositories, 78.1% have no YAML design tokens, which the format leaves optional, though 747 of those still spell out three or more hex colors in their text. Of the 254 with tokens, 88.6% pass the format's own linter with no errors, and only 8.3% with no warnings either.
+
+Like the report, every study describes the registry's corpus, not a random sample of GitHub. The study data is licensed the same way as the rest of this repository; attribute each to its post.
+
 ## Cite
 
 markdownregistry, "State of agent markdown, September 2026", September 27, 2026, https://markdownregistry.com/reports/state-of-agent-markdown-2026-09

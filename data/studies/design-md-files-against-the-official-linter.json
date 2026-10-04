@@ -1,0 +1,23 @@
+{
+ "post": "https://markdownregistry.com/blog/design-md-files-against-the-official-linter",
+ "method": "https://markdownregistry.com/blog/design-md-files-against-the-official-linter#method",
+ "read": "2026-10-04",
+ "linter": "0.4.0",
+ "files": 1162,
+ "repos": 231,
+ "distinct": 715,
+ "noYaml": 908,
+ "noYamlWithHex": 747,
+ "tokens": 254,
+ "zeroErrors": 225,
+ "clean": 21,
+ "orphaned": 103,
+ "typographyString": 81,
+ "contrast": 66,
+ "unknownSubToken": 47,
+ "missingPrimary": 43,
+ "invalidDimension": 22,
+ "invalidColor": 9,
+ "brokenRef": 4,
+ "invalidWeight": 1
+}

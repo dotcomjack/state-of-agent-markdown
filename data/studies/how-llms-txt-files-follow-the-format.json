@@ -1,0 +1,23 @@
+{
+ "post": "https://markdownregistry.com/blog/how-llms-txt-files-follow-the-format",
+ "method": "https://markdownregistry.com/blog/how-llms-txt-files-follow-the-format#method",
+ "read": "2026-10-04",
+ "files": 438,
+ "repos": 331,
+ "skipped": 4,
+ "atRoot": 159,
+ "h1First": 423,
+ "oneH1": 394,
+ "blockquote": 373,
+ "withH2": 419,
+ "everyH2List": 143,
+ "otherHeadings": 84,
+ "optional": 89,
+ "conforming": 134,
+ "proseInH2": 231,
+ "withoutLinks": 102,
+ "linksMedian": 13,
+ "mostlyRelative": 119,
+ "absoluteLinks": 56557,
+ "absoluteToMarkdown": 6170
+}

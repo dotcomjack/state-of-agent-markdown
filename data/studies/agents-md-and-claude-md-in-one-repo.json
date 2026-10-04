@@ -1,0 +1,57 @@
+{
+ "post": "https://markdownregistry.com/blog/agents-md-and-claude-md-in-one-repo",
+ "method": "https://markdownregistry.com/blog/agents-md-and-claude-md-in-one-repo#method",
+ "read": "2026-10-03",
+ "folders": 1203,
+ "repos": 869,
+ "root": 807,
+ "skipped": 18,
+ "identical": 38,
+ "symlink": 286,
+ "claudeSymlink": 228,
+ "import": 347,
+ "importWithMore": 120,
+ "words": 106,
+ "nearCopy": 51,
+ "overlap": 60,
+ "distinct": 315,
+ "bands": [
+  [
+   "under 100 stars",
+   811,
+   416
+  ],
+  [
+   "100 to 999 stars",
+   229,
+   121
+  ],
+  [
+   "1,000 stars or more",
+   163,
+   96
+  ]
+ ],
+ "examples": {
+  "import": [
+   [
+    "nexu-io/open-design",
+    "art_biepnasgbypcmatg"
+   ],
+   [
+    "bytedance/deer-flow",
+    "art_dc53gpqwt7bnmttb"
+   ]
+  ],
+  "symlink": [
+   [
+    "code-yeongyu/oh-my-openagent",
+    "art_j6b6o6rdtlhckvb3"
+   ],
+   [
+    "coreyhaines31/marketingskills",
+    "art_xwcfbpi5yh6vnqjs"
+   ]
+  ]
+ }
+}
